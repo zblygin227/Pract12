@@ -1,0 +1,102 @@
+﻿<Window x:Class="Pract12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pract12"
+        mc:Ignorable="d"
+        Title="Практическая работа №12" Height="350" Width="350" Loaded="Window_Loaded" Background="#FFCDC3FC" ResizeMode="NoResize" Icon="/gimp2_0.png">
+    <Grid>
+
+        <Menu VerticalAlignment="Top" Background="#FFA58BD4">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход" Click="Выход_Click" />
+            </MenuItem>
+            <MenuItem Header="Команды">
+                <MenuItem Header="Очистить" Click="Очистить_Click" />
+            </MenuItem>
+            <MenuItem Header="Справка">
+                <MenuItem Header="О программе" Click="О_Программе_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid Margin="0,18,0,22">
+            <TabControl Background="#FFA58BD4">
+                <TabItem Header="Задание 1">
+                    <TabItem.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="#FFA58BD4" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TabItem.Background>
+
+                    <Grid Background="#FFCDC3FC">
+                        <GroupBox Header="Исходные данные:" Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="108" Width="320">
+                            <Grid>
+                                <TextBox x:Name="inputFirstValue" Margin="230,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="25" Width="65" TabIndex="0" ToolTip="Первое значение"/>
+                                <TextBox x:Name="inputSecondValue" Margin="230,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="23" Width="65" TabIndex="1" ToolTip="Второе значение"/>
+                                <TextBox x:Name="inputThirdValue" Margin="230,57,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="24" Width="65" TabIndex="1" ToolTip="Второе значение"/>
+                                <Label Content="Введите значение первого ребра: " Margin="18,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="207"/>
+                                <Label Content="Введите значение второго ребра: " Margin="18,25,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="207"/>
+                                <Label Content="Введите значение третьего ребра: " Margin="18,54,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="207"/>
+
+                            </Grid>
+                        </GroupBox>
+
+                        <GroupBox Header="Результат:" Margin="0,158,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="98" Width="320">
+                            <Grid>
+                                <Label Content="Объем:" Margin="18,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="207"/>
+                                <TextBox x:Name="result1" IsReadOnly="True" Margin="230,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="25" Width="65"/>
+                                <Label Content="Площадь поверхности:" Margin="18,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="207"/>
+                                <TextBox x:Name="result2" IsReadOnly="True" Margin="230,40,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="25" Width="65"/>
+                            </Grid>
+                        </GroupBox>
+                        <Button Content="Рассчитать" HorizontalAlignment="Center" VerticalAlignment="Top" Width="320" Click="Рассчитать1_Click" Height="30" 
+                                Background="#FFA58BD4" Margin="0,123,0,0" TabIndex="0" ToolTip="Нажмите чтобы рассчитать"/>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Задание 2">
+                    <TabItem.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="#FFA58BD4" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TabItem.Background>
+
+                    <Grid Background="#FFCDC3FC">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="39*"/>
+                        </Grid.ColumnDefinitions>
+                        <GroupBox Header="Исходные данные:" Margin="12,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="77" Width="320" Grid.ColumnSpan="2">
+                            <Grid>
+                                <TextBox x:Name="inputValue" Margin="230,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="30" Width="65"/>
+                                <Label Content="Введите двузначное число: " Margin="18,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="173"/>
+                            </Grid>
+                        </GroupBox>
+
+                        <GroupBox Header="Результат:" Margin="12,148,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="108" Width="320" Grid.ColumnSpan="2">
+                            <Grid>
+                                <Label Content="Сумма цифр:" Margin="18,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="207"/>
+                                <TextBox x:Name="result3" IsReadOnly="True" Margin="230,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="30" Width="65"/>
+                                <Label Content="Произведение цифр:" Margin="18,43,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="207"/>
+                                <TextBox x:Name="result4" IsReadOnly="True" Margin="230,45,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="30" Width="65"/>
+                            </Grid>
+                        </GroupBox>
+                        <Button Content="Рассчитать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="320" Click="Рассчитать2_Click" Height="30" Margin="12,103,0,0" Background="#FFA58BD4"
+                                ToolTip="Нажмите чтобы рассчитать" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <StatusBar VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="#FFA58BD4">
+            <TextBlock Text="Вариант №5"/>
+            <Separator/>
+            <TextBlock x:Name="date"/>
+            <TextBlock x:Name="time"/>
+        </StatusBar>
+
+    </Grid>
+</Window>
